@@ -1,0 +1,20 @@
+O                                      atomic symbol 
+8                                      atomic number 
+15.999                                 atomic mass 
+6.00                                   number of valence electrons 
+basis/008.pp                           pseudopotential filename 
+basis/008_380.na0                      neutral atom filename 
+2                                      number of shells 
+0                                      l of the shell 
+2.00                                   occupation number of the shell
+3.35                                   cutoff 
+basis/008_335.wf1                      wavefunction filename 
+basis/008_335.na1                      orbital potential filename 
+1                                      l of the shell 
+4.00                                   occupation number of the shell
+3.80                                   cutoff 
+basis/008_380.wf2                      wavefunction filename 
+basis/008_380.na2                      orbital potential filename 
+2                                      for xc - shell of changed charge 
+0.5                                    dq of the changed shell for xc 
+0.125  0.125

@@ -1,0 +1,26 @@
+ 2                                         ! number of structures
+5001.inp
+5002.inp
+001.inp
+002.inp
+003.inp
+004.inp
+4001.inp
+4002.inp
+4003.inp
+4004.inp
+! Write out options - leave this line as comment line or null
+&OUTPUT
+iwriteout_ME_SandH = 0
+iwriteout_density = 0
+iwriteout_cdcoeffs = 0
+iwriteout_charges = 0
+iwriteout_neighbors = 0
+iwriteout_dos = 0 
+iwriteout_abs = 1 
+&END
+&OPTIONS
+max_scf_iterations_set = 100
+scf_tolerance_set = 1.0d-8
+beta_set = 0.04
+&END
