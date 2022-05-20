@@ -172,6 +172,7 @@
 ! ===========================================================================
 ! Initialize logfile
         logfile = t%logfile
+        write (logfile,*)
         write (logfile,*) ' Assemble Kohn-Sham potentials - Vxc(G) and Vna(G) '
 
 ! Save the previous result

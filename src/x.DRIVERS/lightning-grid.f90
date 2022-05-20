@@ -52,6 +52,9 @@
 ! ===========================================================================
         program lightning
 
+! /GLOBAL
+        use M_welcome
+
 ! /SYSTEM
         use M_species
         use M_configuraciones
@@ -87,7 +90,6 @@
         implicit none
 
         interface
-
            subroutine Qmixer (t, iscf_iteration, sigma)
              use M_configuraciones
              implicit none
@@ -140,11 +142,11 @@
 
         character (len = 25) :: slogfile
 
-!        real rcbohr                      !< cutoff in Bohr radii
+!       real rcbohr                      !< cutoff in Bohr radii
 
-!        character (len = 11) buffer     !< buffer for generating wavefunction
-!        character (len = 3) rcchar
-!        character (len = 1), dimension (0:9) :: zchar
+!       character (len = 11) buffer     !< buffer for generating wavefunction
+!       character (len = 3) rcchar
+!       character (len = 1), dimension (0:9) :: zchar
 
 ! --------------------------------------------------------------------------
 ! Timer (Intel Fortran)
@@ -156,9 +158,8 @@
 ! Energies
         real ebs                                     ! band-structure energy
         real uii_uee, uxcdcc                         ! short-range energies
-!        real etot                                    ! total energy
-!        real etot_per_atom                           ! total energy per atom
-
+!       real etot                                    ! total energy
+!       real etot_per_atom                           ! total energy per atom
 
 ! Allocate Arrays
 ! ===========================================================================
@@ -303,7 +304,7 @@
             call density_matrix (s)
             if (iwriteout_density .eq. 1) call writeout_density (s)
 
-!           call calculate_charges (s)
+            call calculate_charges (s)
             if (iwriteout_charges .eq. 1) call writeout_charges (s)
             call Qmixer (s, iscf_iteration, sigma)
 
@@ -371,7 +372,7 @@
         call destroy_Fdata_3c
 
 ! Destroy SYSTEM information.
-        call destroy_positions
+!       call destroy_positions
         call destroy_species
 
         call cpu_time (time_end)
