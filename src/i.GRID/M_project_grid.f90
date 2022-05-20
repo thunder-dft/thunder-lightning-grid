@@ -83,7 +83,7 @@
 ! ===========================================================================
 ! Subroutine Description
 ! ===========================================================================
-!       This routine calculates the Kohn-Sham potenials for Hartree and
+!       This routine calculates the Kohn-Sham potentials for Hartree and
 ! exchange-correlation interactions.
 
 !                 + X0 (iatom)
@@ -135,7 +135,6 @@
         integer iatom, ineigh               !< counter over atoms and neighbors
         integer imesh                       !< counter over the mesh
         integer i0, j0, k0                  !< grid index points
-!        integer i, j, k
         integer index0, index1, index2      !< different indexing counters
         integer in1, in2                    !< species numbers
         integer jatom                       !< neighbor of iatom
@@ -149,7 +148,7 @@
         integer imu, inu                    !< loop over shells
         integer norb_mu, norb_nu            !< size of the block for the pair
 
-!        integer, dimension (3) :: ipiv     !< index points on grid
+!       integer, dimension (3) :: ipiv     !< index points on grid
         integer, dimension (3) :: nr
 
         real density
