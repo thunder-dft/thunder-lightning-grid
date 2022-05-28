@@ -123,6 +123,14 @@
              real, intent (in) :: uii_uee, uxcdcc       ! short-range energies
            end subroutine writeout_energies
 
+           subroutine writeout_xyz (t, ebs, uii_uee, uxcdcc)
+             use M_species
+             use M_configuraciones
+             implicit none
+             type(T_structure), target :: t             ! the structure to be used
+             real, intent (in) :: ebs                   ! band-structure energy
+             real, intent (in) :: uii_uee, uxcdcc       ! short-range energies
+           end subroutine writeout_xyz
         end interface
 
 ! Argument Declaration and Description
@@ -305,8 +313,8 @@
             if (iwriteout_density .eq. 1) call writeout_density (s)
 
             call calculate_charges (s)
-            if (iwriteout_charges .eq. 1) call writeout_charges (s)
             call Qmixer (s, iscf_iteration, sigma)
+            if (iwriteout_charges .eq. 1) call writeout_charges (s)
 
 ! ===========================================================================
 ! ---------------------------------------------------------------------------
@@ -330,6 +338,9 @@
               exit
             end if
           end do
+
+! Write out the xyz file - we need this for examining the .xsf files
+          if (iwriteout_xyz .eq. 1) call writeout_xyz (s, ebs, uii_uee, uxcdcc)
 
 ! Destroy Hamiltonian matrix elements storage
           call destroy_assemble_2c (s)
@@ -372,7 +383,6 @@
         call destroy_Fdata_3c
 
 ! Destroy SYSTEM information.
-!       call destroy_positions
         call destroy_species
 
         call cpu_time (time_end)
