@@ -16,3 +16,11 @@
 /mult3x1__genmod.f90
 /mult3x3__genmod.f90
 /factorial__genmod.f90
+/qmixer__genmod.f90
+/rotate_pp__genmod.f90
+/simpson__genmod.f90
+/smoother__genmod.f90
+/writeout_energies__genmod.f90
+/writeout_xsf__genmod.f90
+/writeout_xyz__genmod.f90
+/ylm__genmod.f90
